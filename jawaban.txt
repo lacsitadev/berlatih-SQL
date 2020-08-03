@@ -1,0 +1,21 @@
+1.
+CREATE DATABASE myshop
+2.
+CREATE TABLE `myshop`.`users` ( `id` INT NULL DEFAULT NULL AUTO_INCREMENT , `name` VARCHAR(225) NULL DEFAULT NULL , `email` VARCHAR(225) NULL DEFAULT NULL , `password` VARCHAR(225) NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `myshop`.`users` ( `id` INT NULL DEFAULT NULL AUTO_INCREMENT , `name` VARCHAR(225) NULL DEFAULT NULL , `email` VARCHAR(225) NULL DEFAULT NULL , `password` VARCHAR(225) NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+SELECT * FROM `users`
+CREATE TABLE `myshop`.`items` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(225) NOT NULL , `description` VARCHAR(225) NOT NULL , `price` INT NOT NULL , `stock` INT NOT NULL , `category_id` INT(foreign key references id on categories) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `myshop`.`items` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(225) NOT NULL , `description` VARCHAR(225) NOT NULL , `price` INT NOT NULL , `stock` INT NOT NULL , `category_id` INT(foreign key references id on categories) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `myshop`.`items` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(225) NOT NULL , `description` VARCHAR(225) NOT NULL , `price` INT NOT NULL , `stock` INT NOT NULL , `category_id` INT(foreign key references id on categories) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `myshop`.`items` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(225) NOT NULL , `description` VARCHAR(225) NOT NULL , `price` INT NOT NULL , `stock` INT NOT NULL , `category_id` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `myshop`.`categories` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(225) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+3.
+INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES (NULL, 'John Doe', 'john@doe.com', 'john123');
+INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES (NULL, 'Jane Doe', 'jane@doe.com', 'janita123');
+INSERT INTO `categories` (`id`, `name`) VALUES (NULL, 'gadget'), (NULL, 'cloth'), (NULL, 'men'), (NULL, 'women'), (NULL, 'branded');
+INSERT INTO `items` (`id`, `name`, `description`, `price`, `stock`, `category_id`) VALUES (NULL, 'Sumsang b50', 'Hape keren dari merek Sumsang', '4000000', '100', '1'), (NULL, 'Uniklooh', 'Baju keren dari brand ternama', '500000', '50', '2'), (NULL, 'IMHO Watch', 'Jam tangan untuk anak yang jujur banget', '2000000', '10', '1');
+4.
+SELECT * FROM `items` WHERE price>1000000;
+SELECT * FROM `items` WHERE name LIKE '%sang%';
+5.
+UPDATE `items` SET `price` = '2500000' WHERE `items`.`id` = 1;
